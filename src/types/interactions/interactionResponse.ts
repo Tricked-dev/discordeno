@@ -5,6 +5,7 @@ import { InteractionResponseTypes } from "./interactionResponseTypes.ts";
 export interface InteractionResponse {
   /** The type of response */
   type: InteractionResponseTypes;
+  
   /** An optional response message */
   data?: InteractionApplicationCommandCallbackData;
 }

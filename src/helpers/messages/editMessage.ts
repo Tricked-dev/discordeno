@@ -92,6 +92,10 @@ export async function editMessage(bot: Bot, channelId: bigint, messageId: bigint
       components: content.components?.map((component) => ({
         type: component.type,
         components: component.components.map((subcomponent) => {
+          if (subcomponent.type === MessageComponentTypes.InputText) {
+            return console.log('subcompoitnreg text inpudast', subcomponent);
+          }
+
           if (subcomponent.type === MessageComponentTypes.SelectMenu)
             return {
               type: subcomponent.type,

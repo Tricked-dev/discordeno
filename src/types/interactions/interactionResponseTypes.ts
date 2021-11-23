@@ -12,4 +12,6 @@ export enum InteractionResponseTypes {
   UpdateMessage,
   /** For Application Command Options, send an autocomplete result */
   ApplicationCommandAutocompleteResult,
+  /** For application command and buttons. Creates a form like interface. */
+  Modal,
 }

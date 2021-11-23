@@ -91,6 +91,18 @@ export async function sendInteractionResponse(
     components: options.data.components?.map((component) => ({
       type: component.type,
       components: component.components.map((subcomponent) => {
+        if (subcomponent.type === MessageComponentTypes.InputText) {
+          return {
+            type: subcomponent.type,
+            style: subcomponent.style,
+            custom_id: subcomponent.customId,
+            label: subcomponent.label,
+            placeholder: subcomponent.placeholder,
+            min_length: subcomponent.minLength,
+            max_length: subcomponent.maxLength,
+          };
+        }
+
         if (subcomponent.type === MessageComponentTypes.SelectMenu)
           return {
             type: subcomponent.type,
@@ -130,6 +142,8 @@ export async function sendInteractionResponse(
         };
       }),
     })),
+    title: options.data.title,
+    custom_id: options.data.customId,
     flags: options.data.flags,
   };
 

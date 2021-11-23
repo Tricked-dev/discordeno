@@ -4,4 +4,6 @@ import { CreateMessage } from "../../messages/createMessage.ts";
 export interface InteractionApplicationCommandCallbackData extends Omit<CreateMessage, "messageReference"> {
   /** Set to `64` to make your response ephemeral */
   flags?: number;
+  customId?: string;
+  title?: string;
 }

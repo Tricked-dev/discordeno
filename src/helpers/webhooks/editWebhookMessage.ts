@@ -66,6 +66,10 @@ export async function editWebhookMessage(
       components: options.components?.map((component) => ({
         type: component.type,
         components: component.components.map((subcomponent) => {
+          if (subcomponent.type === MessageComponentTypes.InputText) {
+            return console.log('subcompoitnreg text input', subcomponent);
+          }
+
           if (subcomponent.type === MessageComponentTypes.SelectMenu)
             return {
               type: subcomponent.type,

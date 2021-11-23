@@ -6,4 +6,6 @@ export enum MessageComponentTypes {
   Button,
   /** A select menu. */
   SelectMenu,
+  /** Text input type */
+  InputText,
 }

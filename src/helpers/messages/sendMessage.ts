@@ -107,6 +107,10 @@ export async function sendMessage(bot: Bot, channelId: bigint, content: string |
       components: content.components?.map((component) => ({
         type: component.type,
         components: component.components.map((subcomponent) => {
+          if (subcomponent.type === MessageComponentTypes.InputText) {
+            return console.log('subcompoitnreg text inpu 2t', subcomponent);
+          }
+
           if (subcomponent.type === MessageComponentTypes.SelectMenu)
             return {
               type: subcomponent.type,

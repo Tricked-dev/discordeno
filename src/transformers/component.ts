@@ -3,6 +3,7 @@ import { ButtonStyles } from "../types/messages/components/buttonStyles.ts";
 import { MessageComponentTypes } from "../types/messages/components/messageComponentTypes.ts";
 import { SnakeCasedPropertiesDeep } from "../types/util.ts";
 import { SelectOption } from "../types/messages/components/selectOption.ts";
+import { TextStyleTypes } from "../types/messages/components/modals.ts";
 
 export function transformComponent(bot: Bot, payload: SnakeCasedPropertiesDeep<Component>): DiscordenoComponent {
   return {
@@ -46,8 +47,8 @@ export interface Component {
   customId?: string;
   /** whether the component is disabled, default false */
   disabled?: boolean;
-  /** For different styles/colors of the buttons */
-  style?: ButtonStyles;
+  /** For different styles/colors of the component */
+  style?: ButtonStyles | TextStyleTypes;
   /** text that appears on the button (max 80 characters) */
   label?: string;
   /** Emoji object that includes fields of name, id, and animated supporting unicode and custom emojis. */
@@ -81,7 +82,7 @@ export interface DiscordenoComponent {
   /** whether the component is disabled, default false */
   disabled?: boolean;
   /** For different styles/colors of the buttons */
-  style?: ButtonStyles;
+  style?: ButtonStyles | TextStyleTypes;
   /** text that appears on the button (max 80 characters) */
   label?: string;
   /** Emoji object that includes fields of name, id, and animated supporting unicode and custom emojis. */

@@ -61,6 +61,10 @@ export async function editSlashResponse(bot: Bot, token: string, options: Discor
       components: options.components?.map((component) => ({
         type: component.type,
         components: component.components.map((subcomponent) => {
+          if (subcomponent.type === MessageComponentTypes.InputText) {
+            return console.log("subcompoitnreg text asdinput", subcomponent);
+          }
+
           if (subcomponent.type === MessageComponentTypes.SelectMenu)
             return {
               type: subcomponent.type,

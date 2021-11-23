@@ -10,9 +10,9 @@ export interface InteractionData {
   /** The values chosen by the user. */
   values?: string[];
   /** The Id of the invoked command */
-  id: string;
+  id?: string;
   /** The name of the invoked command */
-  name: string;
+  name?: string;
   /** Converted users + roles + channels */
   resolved?: {
     /** The Ids and Message objects */

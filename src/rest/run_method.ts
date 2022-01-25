@@ -44,7 +44,7 @@ export async function runMethod<T = any>(
       },
       method: method.toUpperCase(),
     }).catch((error) => {
-      errorStack.message = error.message
+      errorStack.message = error.message;
       throw errorStack;
     });
 
